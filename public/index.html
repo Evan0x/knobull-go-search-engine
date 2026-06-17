@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knobull Academic Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Knobull Academic Search</h1>
+        <p>Find resources for your career goals.</p>
+    </header>
+    
+    <div class="search-box">
+        <input type="text" id="goalInput" placeholder="e.g. I want to learn Go..." autocomplete="off">
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Career Advice">Career Advice</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Research Tool">Research Tool</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Game Design">Game Design</option>
+            <option value="Biology">Biology</option>
+            <option value="Science">Science</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Technology">Technology</option>
+        </select>
+        <select id="typeFilter">
+            <option value="">All Types</option>
+            <option value="external_course">External Courses & Tools</option>
+            <option value="internal_article">Internal Articles</option>
+        </select>
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="loadingIndicator">
+        Loading recommendations...
+    </div>
+
+    <div class="results" id="resultsContainer">
+        <!-- Cards will be injected here -->
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
