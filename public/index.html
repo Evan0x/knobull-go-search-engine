@@ -1,50 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knobull Academic Search</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <!-- ══ HEADER ══ -->
     <header>
-        <h1>Knobull Academic Search</h1>
-        <p>Find resources for your career goals.</p>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand">Knobull</span>
+                    <span class="sub">Academic Search</span>
+                </div>
+            </a>
+            <div class="header-search">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input type="text" placeholder="Search papers, topics, courses…" value="Climate change solutions 2026" />
+            </div>
+        </div>
     </header>
-    
-    <div class="search-box">
-        <input type="text" id="goalInput" placeholder="e.g. I want to learn Go..." autocomplete="off">
-        <select id="categoryFilter">
-            <option value="">All Categories</option>
-            <option value="Computer Science">Computer Science</option>
-            <option value="Career Advice">Career Advice</option>
-            <option value="Data Science">Data Science</option>
-            <option value="Research Tool">Research Tool</option>
-            <option value="Healthcare">Healthcare</option>
-            <option value="Architecture">Architecture</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Game Design">Game Design</option>
-            <option value="Biology">Biology</option>
-            <option value="Science">Science</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="Technology">Technology</option>
-        </select>
-        <select id="typeFilter">
-            <option value="">All Types</option>
-            <option value="external_course">External Courses & Tools</option>
-            <option value="internal_article">Internal Articles</option>
-        </select>
-        <button id="searchBtn">Search</button>
+
+    <!-- ══ HERO ══ -->
+    <div class="hero">
+        <div class="hero-logo">
+            <div class="hero-logo-mark">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+            </div>
+            <div class="hero-logo-text">
+                <div class="brand">Knobull</div>
+                <div class="sub">Academic Search</div>
+            </div>
+        </div>
+
+        <h2>Find resources for your career and academic goals</h2>
+
+        <div class="search-card">
+            <div class="search-row">
+                <div class="search-input-wrap">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input type="text" id="goalInput" placeholder="e.g. I want to learn Go..."
+                        autocomplete="off" value="Climate change solutions 2026" />
+                </div>
+                <button class="search-btn" id="searchBtn">Search</button>
+            </div>
+            <div class="filter-row">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Career Advice">Career Advice</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Research Tool">Research Tool</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Game Design">Game Design</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Science">Science</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Technology">Technology</option>
+                </select>
+                <select id="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="external_course">External Courses &amp; Tools</option>
+                    <option value="internal_article">Internal Articles</option>
+                </select>
+            </div>
+        </div>
     </div>
 
-    <div id="loadingIndicator">
-        Loading recommendations...
+    <!-- ══ LOADING ══ -->
+    <div id="loadingIndicator">Loading recommendations...</div>
+
+    <!-- ══ MAIN ══ -->
+    <div class="main-content">
+        <div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-icon blue">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-body">
+                        <div class="num">12,400+</div>
+                        <div class="lbl">Articles</div>
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon green">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <div class="stat-body">
+                        <div class="num">3,800+</div>
+                        <div class="lbl">Courses</div>
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon amber">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <div class="stat-body">
+                        <div class="num">240+</div>
+                        <div class="lbl">Topics</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Summary -->
+            <div class="ai-summary">
+                <div class="ai-header">
+                    <div class="ai-badge">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <span>AI Summary</span>
+                    <span class="ai-tag">Powered by AI</span>
+                </div>
+                <div class="ai-body">
+                    <p id="summaryText">
+                        Use Knobull Academic Search to discover courses, articles, and tools tailored
+                        to your goals. Search by goal, category, and type to find the best learning path.
+                    </p>
+                    <ul>
+                        <li><strong>Career-focused:</strong> Match resources to your next career step.</li>
+                        <li><strong>Fast discovery:</strong> See AI-curated recommendations instantly.</li>
+                        <li><strong>Flexible filters:</strong> Browse by category and resource type.</li>
+                        <li><strong>Practical results:</strong> Find real-world courses and research guides.</li>
+                    </ul>
+                </div>
+                <div class="ai-footer">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Built for fast academic search · Knobull Research Engine
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="section-label">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3"/>
+                </svg>
+                Search Results
+            </div>
+            <div id="summaryLabel" class="section-label"></div>
+            <div class="results" id="resultsContainer"></div>
+
+        </div>
+
+        <!-- ══ SIDEBAR ══ -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="section-label">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    Related Questions
+                </div>
+                <a href="#" class="related-item">What are the latest developments in renewable energy?</a>
+                <a href="#" class="related-item">How does climate change affect global economies?</a>
+                <a href="#" class="related-item">What solutions are most effective for carbon reduction?</a>
+                <a href="#" class="related-item">Which countries are leading in climate action?</a>
+            </div>
+
+            <div class="sidebar-card">
+                <div class="section-label">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a2 2 0 012-2z"/>
+                    </svg>
+                    Browse Topics
+                </div>
+                <a href="#" class="related-item">Computer Science</a>
+                <a href="#" class="related-item">Data Science</a>
+                <a href="#" class="related-item">Biology &amp; Life Sciences</a>
+                <a href="#" class="related-item">Mathematics</a>
+                <a href="#" class="related-item">Career Development</a>
+            </div>
+        </aside>
     </div>
 
-    <div class="results" id="resultsContainer">
-        <!-- Cards will be injected here -->
-    </div>
-    
     <script src="app.js"></script>
 </body>
 </html>
